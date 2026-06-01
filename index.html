@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exodus Associates Interiors </title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a6e3e;
+      --navy: #1a1a6e;
+      --gold: #c8922a;
+      --light: #f7f8fa;
+      --border: #d8dde6;
+      --text: #1c1c2e;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --radius: 10px;
+      --shadow: 0 2px 16px rgba(26, 26, 110, 0.07);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      padding: 28px 36px 20px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 16px;
+    }
+
+    .logo-wrap {
+      flex-shrink: 0;
+      width: 90px;
+      height: 90px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .company-info {
+      flex: 1;
+    }
+
+    .company-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--navy);
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    .iso-tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .iso-line {
+      width: 180px;
+      height: 1.5px;
+      background: var(--navy);
+      margin: 6px 0 8px;
+    }
+
+    .header-meta {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      align-items: center;
+    }
+
+    .header-meta strong {
+      color: var(--text);
+    }
+
+    .header-meta a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .header-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 8px;
+    }
+
+    .header-address {
+      font-size: 11.5px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .branches {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .double-rule {
+      margin: 14px 0 0;
+      border: none;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .double-rule::after {
+      content: '';
+      display: block;
+      margin-top: 3px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── SECTION BOXES ── */
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 18px 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+
+    .info-box-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .field-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+
+    .field-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .field-label {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 58px;
+      font-weight: 500;
+    }
+
+    .field-input {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      color: var(--text);
+      padding: 3px 4px;
+      outline: none;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+
+    .field-input:focus {
+      border-bottom-color: var(--green);
+    }
+
+    .field-input::placeholder {
+      color: #c0c4cc;
+    }
+
+
+
+    /* ── FOOTER ACTIONS ── */
+    .actions {
+      display: flex;
+      gap: 12px;
+      padding: 16px 36px 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        box-shadow: none;
+        max-width: 100%;
+      }
+
+      /* Hide all action/control buttons */
+      .actions {
+        display: none !important;
+      }
+
+      /* Clean table cells */
+      td, th {
+        vertical-align: middle !important;
+        padding: 6px 8px !important;
+      }
+
+      /* Plain-text swap spans — no box look at all */
+      span.print-text-swap {
+        display: inline !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: #1c1c2e !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      /* Strip any leftover Bootstrap form-control styling on td children */
+      td .form-control,
+      td .form-select,
+      td input,
+      td select {
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      /* Remove table striping for cleaner print */
+      .table-striped > tbody > tr:nth-of-type(odd) > * {
+        background-color: transparent !important;
+        --bs-table-bg-type: transparent !important;
+      }
+      .table-success > tbody > tr > * {
+        --bs-table-bg-type: transparent !important;
+      }
+
+      /* Info boxes */
+      .info-box {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+      }
+
+      /* Field-row inputs in info boxes — remove underline */
+      .field-input {
+        border: none !important;
+        background: transparent !important;
+      }
+
+      /* Room boxes */
+      .wood-box, .fc-box {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+      }
+
+      /* Avoid splitting rows across pages */
+      tr {
+        page-break-inside: avoid;
+      }
+
+      /* Terms & Conditions always on a fresh page */
+      #termsSection {
+        page-break-before: always;
+        break-before: page;
+      }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+
+      .header,
+      .info-row,
+      .actions {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .header-top {
+        gap: 14px;
+      }
+
+      .company-name {
+        font-size: 22px;
+      }
+
+      .logo-wrap {
+        width: 68px;
+        height: 68px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-wrap">
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7QCEUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAGgcAigAYkZCTUQwYTAwMGE4YTAxMDAwMDhjMDIwMDAwMWMwMzAwMDA1NTAzMDAwMGUwMDMwMDAwNjMwNDAwMDA2ODA1MDAwMGMxMDUwMDAwMGYwNjAwMDA1NzA2MDAwMDkzMDcwMDAwAP/bAIQABQYGCwgLCwsLCw0LCwsNDg4NDQ4ODw0ODg4NDxAQEBEREBAQEA8TEhMPEBETFBQTERMWFhYTFhUVFhkWGRYWEgEFBQUKBwoICQkICwgKCAsKCgkJCgoMCQoJCgkMDQsKCwsKCw0MCwsICwsMDAwNDQwMDQoLCg0MDQ0MExQTExOc/8IAEQgAlgCWAwEiAAIRAQMRAf/EAFUAAQACAwEBAAAAAAAAAAAAAAACBwEEBQMGEAACAQAECwYEBQMFAAAAAAAAARECITGhECBBUWFxgZGx0fADEhMyM8EEFOHxIkBQYGMwYnBCUoKSov/aAAwDAQACAAMAAAABpgAAAAAAAAC56YucpgAAAAAAAAC56YucpgAAAAAAAAC56YucpgHv0PHs7vly89fRm1m08862NvanjlY6nrPHHdjMscafWMfIYzjl7C56YucpgHS7fD7HS8fbR3dCT1zmeGZy0fTHl7bOprT33nPd8smD5LGccTZXPTFzlMA6PY4Xf6PjnS3se0efPeectDw6EvLOnDoy9Mczp+HpLE0HtH5bGccXZXPTFzlMAzmIkiJIiSIkiJIiSIAXPTFzlMAAAAAAAAAXPTFzlMAAAAAAAAAXPTFzlMLnFMLnFMLnFMLnFMLnFMLnFMLnFMLnFMLnFMXOH//aAAgBAQABBQL96UKHffy6PAR8uj5dHy6Pl0eAj5dHgI8BHgI8BC+GnG+G89HBTPDZ4bPCYlCdJIWIrcX4bzrBTPEPEE+8TBXSOzpYlG3F+H86wUzuUTw0RB2lIo0YO0UFFzho24vw3nWCmTSO9SO88EsbbKLjDRtxexcUvwlRUVFRSSYkioqHRTKioqX+Cf/aAAgBAwABPwH8/SpCbeUn+64dL+647zO8zvvEp2lC0qzCUsmat2NTtE4O/ouO/wBQd/RcUnP6Z//aAAgBAgABPwH8/wDD9jRpUZay8jtOxo0FPdnazwv4f/ZQ7Cbez7v/ACk+XoaN75ny1HNx5ny1HNe+eJ8J5dr9j4ryPZxEu0/3UdxTp9yjLrfFnhvs4p2v/XqfITnF+Ff4dr9jtKPfUN3ng/yUv+yPBbddJwrG2rTwf5KW9HZUXQlZMjlE9T+l/wD/2gAIAQEABj8C/eiWc89G89SjeepRvPUo3nqUbz1KN56lG89SjeepRvPUo3nqUbz1KN5VTTxqOJbcWrcW3Y+x41HE+qPqv6Gx4yxLCwswzibHjUcSxmUy3YLGWPE2PGTPOjz0Tz0bzz0bzz0bz1EedHmV556N550edXnnV4/xJ1f4J//aAAgBAQABPyH96OS2hotV00HUch0PIdDyHQ8h1PIdRyHQ8h1PIdZyHW8h1PIJmmSTeXJsxr0JoWXiJatwqmxWMWaD7UNBFWOHpgqBqvVPAZOyGoNlxOi41RuLGN3GQeLehat/HBb2FhVAtDo1leqivWO0mwakStt5GQ6TJwLSdfoHi30z9L4klvYKBVNxoYksItRWRNnEia63rJWlbryMgaSBnS6B4t6ObiV6Y2CttQpqrIPoGgujXkXWgm7Um445zrUIoe4Q9odWf2JRJ0ugeLoYNBE50zqSSBP0A6CHJViqi5Yjuog/9lijGT0CfpQmtpEkonKPGkkkkkkkkkkkkn97f//aAAwDAQACAAMAAAAQ888888888o888888888o888888888o8toyGaFLeo8AKzVn3G+o8oL4Tjto+o8MMMMMMM8o888888888o888888888owwwwwwwwwg/9oACAEDAAE/EPz7k4Tipe48jgWBZiW4aR7lyNNw5Gk4csThL3LInPbywql7EZ5PEhqB2PE4SyaydPszU7xCLK3bWNRvCa2XLUzfuf6X/9oACAECAAE/EPz9Yg5K12JZmsdeoa8ET0xvEyq0gdd4Dh4eu0YRHKzdQEIUIUrKfQeGu8aLUE8CMBHp8UngSmGzyg2Nwf6V/9oACAEBAAE/EP3o8FJkJuxFQNsR1Z5ZD9zFY2jPNlHDiBgIjUYt4cGVDyj4gh5G2TRJkEMRVzZVGUfYRGSatgVo23ERDKOVKkOKpXpqFYUbg2uSslXcANp68XoNDJs6viDe7WcaJ4IvYFSRAtCzsrU4IjqAxYqVteRUWDVTPJ0C2NscYHrr1V7xKvdUIVaevFaI+kD1Q6GK32+zFveJ98K8+yindIzw4szYIWprrOcWq9roSRkTzXlZ5eF4z07hx7T14wWXr0soWVOw5CTGuhtFUknbynTP7G4xUOBIruqaS1tYcfsGqBDEGVUHe5mcr2EHVVq++C9p68Wv6JzWKGflUmuuJRP0XKZgDGEzEW3UIcjjYKHJwATHHknOlTCG1QYvLBF7ktPXipwSwJEiZPAkTJkiRP8Ae3//2Q=="
+            alt="Kiran Interiors Logo">
+        </div>
+        <div class="company-info">
+          <div class="company-name">Exodus Associates</div>
+          <div class="iso-tag">Interiros</div>
+          <div class="iso-line"></div>
+          <div class="header-meta">
+            <span>Expert interior design and execution for homes, offices, and commercial spaces</span>
+            <span>|</span>
+            <a href="https://www.instagram.com/exodusinteriorstudio/" target="_blank"><i class="bi bi-instagram"></i>
+              exodusinteriorstudio</a>
+          </div>
+        </div>
+      </div>
+      <hr class="header-divider">
+      <div class="branches">
+        Location: Hyderabad &nbsp;|&nbsp; Call +91 9490039386 , +91 8297912059
+      </div>
+      <div class="double-rule"></div>
+    </div>
+
+    <!-- ESTIMATION + CLIENT INFO -->
+    <div class="info-row">
+      <div class="info-box">
+        <div class="info-box-title">Estimations Summary</div>
+        <div class="field-row">
+          <span class="field-label">Date:</span>
+          <input class="field-input" type="date" id="est-date">
+        </div>
+        <div class="field-row">
+          <span class="field-label">From:</span>
+          <input class="field-input" type="text" id="est-from" placeholder="Your name">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Contact:</span>
+          <input class="field-input" type="tel" id="est-contact" placeholder="Phone number">
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title">Client Details</div>
+        <div class="field-row">
+          <span class="field-label">Name:</span>
+          <input class="field-input" type="text" id="cl-name" placeholder="Client name">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Phone:</span>
+          <input class="field-input" type="tel" id="cl-phone" placeholder="Phone number">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Address:</span>
+          <input class="field-input" type="text" id="cl-addr" placeholder="Address">
+        </div>
+      </div>
+    </div>
+
+    <!--Select Table-->
+    <div class="actions row">
+      <div class="col">
+        <select class="form-select" id="tableSelect" aria-label="Default select example">
+          <option selected value="Wood Work">Wood Work</option>
+          <option value="False Ceiling">False Ceiling</option>
+          <option value="Electrical Works">Electrical Works</option>
+          <option value="Cushioning">Cushioning</option>
+          <option value="Glass Work">Glass Work</option>
+          <option value="Other Works">Other Works</option>
+        </select>
+      </div>
+      <div class="col-auto"><button class="btn btn-primary" id="addTableBtn">Add Table</button></div>
+    </div>
+
+    <!-- Tables Container -->
+    <div id="tablesContainer"></div>
+
+    <!-- Wood Work Box Template (hidden) -->
+    <template id="woodWorkBoxTemplate">
+      <div class="wood-box border rounded p-3 mb-3">
+        <div class="d-flex align-items-center mb-2 gap-2">
+          <input type="text" class="form-control form-control-sm box-name-input"
+            placeholder="Room / Area name (e.g. Master Bedroom)">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-success table-striped mb-1">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:60px;">L</th>
+                <th scope="col" style="width:60px;">H</th>
+                <th scope="col" style="width:70px;">Sqft</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:80px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="box-tbody">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1">
+          <div class="d-flex align-items-center gap-2 flex-wrap ">
+            <span class="fw-semibold actions" style="font-size:13px;">Brand:</span>
+            <select class="form-select form-select-sm brand-select actions" style="width:auto;">
+              <option selected value="gurgan">Gurjan</option>
+              <option value="sink710">Sink710</option>
+              <option value="kitchen(acrylic)">Kitchen (Acrylic)</option>
+              <option value="wpc(wincrop)">WPCWincrop</option>
+            </select>
+            <button class="btn btn-primary btn-sm add-row-btn actions">+ Add Row</button>
+            <button class="btn btn-danger btn-sm remove-box-btn actions">✕ Remove Box</button>
+          </div>
+          <div class="fw-bold" style="font-size:14px;">
+            Room Total: ₹<span class="room-total">0.00</span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Wood Work Row Template (hidden) -->
+    <template id="woodWorkRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm row-L" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td><input type="number" class="form-control form-control-sm row-H" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td class="text-center align-middle row-sqft fw-normal">0.00</td>
+        <td>
+          <select class="form-select form-select-sm row-price-type" style="display:'';">
+            <option value="">-Select-</option>
+            <option value="boxPrice">Box Price</option>
+            <option value="framePrice">Frame Price</option>
+            <option value="panelingPrice">Paneling Price</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm mt-1 row-lump lump-cell" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- False Ceiling Box Template -->
+    <template id="falseCeilingBoxTemplate">
+      <div class="fc-box border rounded p-3 mb-3" style="border-color:#6c757d!important;">
+        <div class="d-flex align-items-center mb-2 gap-2">
+          <input type="text" class="form-control form-control-sm fc-box-name"
+            placeholder="Room / Area name (e.g. Living Room)">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-striped mb-1" style="--bs-table-bg:#eaf4fb;">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:60px;">L</th>
+                <th scope="col" style="width:60px;">H</th>
+                <th scope="col" style="width:70px;">Sqft/Rft</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:90px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="fc-tbody"></tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1">
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <button class="btn btn-primary btn-sm fc-add-row-btn actions">+ Add Row</button>
+            <button class="btn btn-danger btn-sm fc-remove-box-btn actions">✕ Remove Box</button>
+          </div>
+          <div class="fw-bold" style="font-size:14px;">
+            Room Total: ₹<span class="fc-room-total">0.00</span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- False Ceiling Row Template -->
+    <template id="falseCeilingRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm fc-item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm fc-row-L" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td><input type="number" class="form-control form-control-sm fc-row-H" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td class="text-center align-middle fc-row-sqft fw-normal">0.00</td>
+        <td>
+          <select class="form-select form-select-sm fc-row-price-type" style="display:'';">
+            <option value="">— Select —</option>
+            <option value="saintgobain_jsw">Saint-Gobain / JSW-Channels — ₹60</option>
+            <option value="oman_jsw">Oman / JSW-Channels — ₹55</option>
+            <option value="pvc">PVC — ₹90</option>
+            <option value="fluted">Fluted — ₹140</option>
+            <option value="saintgobain_megasteel">Saint-Gobain / MegaSteel — ₹110</option>
+            <option value="rft">RFT — ₹200</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm mt-1 fc-row-lump" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle fc-row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm fc-remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+
+    <!-- Glass Work Row Template -->
+    <template id="glassWorkRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm gw-item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm gw-row-L" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td><input type="number" class="form-control form-control-sm gw-row-H" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td class="text-center align-middle gw-row-sqft fw-normal">0.00</td>
+        <td>
+          <select class="form-select form-select-sm gw-row-price-type" style="display:'';">
+            <option value="">— Select —</option>
+            <option value="bathroom_glass">Bathroom Glass — ₹600</option>
+            <option value="mirror_light">Mirror Light — ₹650</option>
+            <option value="normal_mirror">Normal Mirror — ₹250</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm mt-1 gw-row-lump" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle gw-row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm gw-remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- Cushioning Row Template -->
+    <template id="cushioningRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm cu-item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm cu-row-L" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td><input type="number" class="form-control form-control-sm cu-row-H" min="0" step="0.01" placeholder="0"
+            style="width:55px;padding:2px 4px;"></td>
+        <td class="text-center align-middle cu-row-sqft fw-normal">0.00</td>
+        <td>
+          <select class="form-select form-select-sm cu-row-price-type" style="display:'';">
+            <option value="">— Select —</option>
+            <option value="head_board_cushion">Head Board Cushion — ₹1050</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm mt-1 cu-row-lump" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle cu-row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm cu-remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- Electrical Row Template -->
+    <template id="electricalRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm el-item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm el-row-input" min="0" step="0.01" placeholder="0"
+            style="width:70px;padding:2px 4px;"></td>
+        <td class="text-center align-middle el-row-converted fw-normal">—</td>
+        <td>
+          <select class="form-select form-select-sm el-row-price-type" style="display:'';">
+            <option value="">— Select —</option>
+            <option value="roof_light">Roof Light — ₹800/m</option>
+            <option value="profile_light">Profile Light - 750/m</option>
+            <option value="panel_light">Panel Light — ₹1500/pt</option>
+            <option value="tube_light">Tube Light — ₹800/pt</option>
+            <option value="ceiling_fan">Ceiling Fan — ₹6000/pt</option>
+            <option value="spot_light">Spot Light — ₹550/pt</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm mt-1 el-row-lump" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle el-row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm el-remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- Other Work Row Template -->
+    <template id="otherWorkRowTemplate">
+      <tr>
+        <td><input type="text" class="form-control form-control-sm ow-item-name" placeholder="Item"></td>
+        <td><input type="number" class="form-control form-control-sm ow-row-qty" min="0" step="1" placeholder="0"
+            style="width:65px;padding:2px 4px;"></td>
+        <td>
+          <select class="form-select ow-row-price-type mb-1 " style="display:'';">
+            <option value="">— Select —</option>
+            <option value="price_x_qty">Price × Qty</option>
+            <option value="lumsum">Lump Sum</option>
+          </select>
+          <input type="number" class="form-control form-control-sm ow-row-price" min="0" step="0.01"
+            placeholder="Enter price" style="display:none;">
+          <input type="number" class="form-control form-control-sm ow-row-lump" min="0" step="1"
+            placeholder="Enter amount" style="display:none;">
+        </td>
+        <td class="text-center align-middle ow-row-total fw-normal">0.00</td>
+        <td class="text-center align-middle actions">
+          <button class="btn btn-outline-danger btn-sm ow-remove-row-btn" title="Remove row">✕</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- PROJECT COST SUMMARY -->
+    <div id="projectCostSummary" class="px-4 py-4">
+      <div
+        style="max-width:680px; margin:0 auto; border:1px solid #d0d0d0; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <!-- Header -->
+        <div style="background:#2d3f4f; color:#fff; text-align:center; padding:14px 20px;">
+          <span style="font-size:17px; font-weight:700; letter-spacing:1.5px;">PROJECT COST SUMMARY</span>
+        </div>
+        <!-- Line items -->
+        <div style="background:#fff; padding:18px 28px 0 28px;">
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">Wood Work Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-wood">0.00</span>
+          </div>
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">False Ceiling Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-fc">0.00</span>
+          </div>
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">Glass Work Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-gw">0.00</span>
+          </div>
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">Cushioning Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-cu">0.00</span>
+          </div>
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">Electrical Work Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-el">0.00</span>
+          </div>
+          <div class="summary-row"
+            style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:14px;">Other Work Total</span>
+            <span style="font-size:14px; font-weight:600;" id="sum-ow">0.00</span>
+          </div>
+          <!-- Sub Total -->
+          <div
+            style="display:flex; justify-content:space-between; padding:14px 0 10px 0; border-top:2px solid #333; margin-top:6px;">
+            <span style="font-size:15px; font-weight:700;">Sub Total</span>
+            <span style="font-size:15px; font-weight:700;" id="sum-subtotal">0.00</span>
+          </div>
+          <div style="border-top:2px solid #333; margin-bottom:14px;"></div>
+          <!-- Grand Total -->
+          <div
+            style="background:lab(95.13% -18.44 -6.61); border-radius:8px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+            <span style="font-size:17px; font-weight:800; color:#000000; letter-spacing:1px;">GRAND TOTAL</span>
+            <span style="font-size:20px; font-weight:800; color:#e50a0ab0;" id="sum-grandtotal">0.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MATERIALS SPECIFICATIONS -->
+    <div id="materialSpecSection" class="px-4 py-3">
+      <h5 class="fw-bold mb-3" style="color:var(--navy);">📋 Materials Specifications</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered mb-2" id="matSpecTable">
+          <thead style="background:#2d3f4f; color:#fff;">
+            <tr>
+              <th style="width:25%;">Material</th>
+              <th style="width:30%;">Specification</th>
+              <th style="width:35%;">Benefits</th>
+              <th class="actions text-center" style="width:10%;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="matSpecBody">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-primary btn-sm actions" onclick="addMatRow()">+ Add Material</button>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn btn-primary" onclick="smartPrint()">🖨 Print / Save PDF</button>
+      <button class="btn btn-green" onclick="saveData()">💾 Save</button>
+      <button class="btn btn-outline" onclick="clearAll()">🗑 Clear</button>
+    </div>
+  </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS (prints as a fresh new page) -->
+  <div id="termsSection" style="max-width:860px; margin:40px auto; padding:32px 40px; font-family:inherit;">
+    <!-- Header -->
+    <div
+      style="display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:14px; border-bottom:2px solid #2d3f4f;">
+      <div
+        style="background:#2d3f4f; color:#fff; font-weight:800; font-size:20px; padding:10px 18px; border-radius:6px; letter-spacing:1px;">
+        </div>
+      <div>
+        <div style="font-size:18px; font-weight:700; color:#2d3f4f;">Terms &amp; Conditions</div>
+        <div style="font-size:12px; color:#888;">Exodus Associates — Interior Estimation</div>
+      </div>
+    </div>
+    
+    <div style="border:1.5px solid #c0392b; border-radius:8px; padding:18px 22px; margin-bottom:28px; font-size:13px; line-height:1.8; color:#222;">
+    <!-- Terms & Conditions table -->
+    <table style="width:100%; border-collapse:collapse; font-size:13.5px;">
+      <thead>
+        <tr style="background:#2d3f4f; color:#fff;">
+          <th style="padding:12px 16px; text-align:left; width:36%; border:1px solid #bbb;">Terms</th>
+          <th style="padding:12px 16px; text-align:left; border:1px solid #bbb;">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Advance Payment</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">50% advance before starting work</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Second Payment</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">25% during work progress</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Third Payment</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">20% before installation</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Final Payment</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Remaining 5% after completion</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Additional Works</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Additional work will be charged based on actual SFT
+            measurements</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Lump Sum</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">No lump sum for additional works</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Design Changes</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Any changes should be finalized before installation
+          </td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Post Installation Changes</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">No changes will be accepted after installation</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Colour Selection</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Laminates, colours and finish selections as per client
+            choice</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">3D Designing</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Separate architect/design charges applicable if
+            required</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Site Readiness</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Civil and electrical readiness should be completed
+            before installation</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Material Availability</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Subject to market availability</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px; border:1px solid #ddd; vertical-align:top;">Final Selections</td>
+          <td style="padding:11px 16px; border:1px solid #ddd;">Laminate, finish selections will be finalized based on
+            client approval before execution</td>
+        </tr>
+      </tbody>
+    </table>
+
+      <h6 class="mt-2" >For any enquiry, please call:</h6>
+      <hr>
+      <p style="margin:0 0 2px 0;">– Krupa Anand &nbsp;&nbsp; +91 9490039386</p>
+      <p style="margin:0;">– Gurunanak Sachin &nbsp;&nbsp; +91 8297912059</p>
+    </div>
+
+
+    <!-- Signature lines -->
+    <div style="display:flex; justify-content:space-between; margin-top:52px; font-size:12px; color:#555;" class="actions">
+      <div style="text-align:center;">
+        <div style="border-top:1px solid #555; padding-top:6px; width:180px;">Client Signature</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="border-top:1px solid #555; padding-top:6px; width:180px;">Authorised Signatory</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ── Smart Print (base) ──
+    function _basePrint() {
+      // For every visible input/select, replace it with a plain <span> containing its value.
+      // We do a full DOM swap so the printed page never contains form controls —
+      // this works on desktop AND mobile browsers (which handle window.print() async).
+      const swaps = [];
+
+      document.querySelectorAll('input:not([type=checkbox]), select').forEach(el => {
+        if (el.style.display === 'none') return;
+        // offsetParent is null for display:none ancestors, except position:fixed
+        if (el.offsetParent === null && el.type !== 'hidden') return;
+
+        let text = '';
+        if (el.tagName === 'SELECT') {
+          const opt = el.options[el.selectedIndex];
+          text = opt ? opt.text.replace(/^—\s*/, '').trim() : '';
+        } else if (el.type === 'date' && el.value) {
+          // Format date nicely: yyyy-mm-dd → dd/mm/yyyy
+          const parts = el.value.split('-');
+          text = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : el.value;
+        } else {
+          text = el.value || '';
+        }
+
+        const span = document.createElement('span');
+        span.className = 'print-text-swap';
+
+        // Detect context: inside a table cell vs a field-row label
+        const inTable = !!el.closest('td');
+        if (inTable) {
+          // Table cell: block span fills the cell cleanly
+          span.style.cssText = 'display:block;font-size:13px;font-weight:500;color:#1c1c2e;background:none;border:none;padding:0;margin:0;word-break:break-word;';
+        } else {
+          // Info-box field row: inline, matches .field-input sizing
+          span.style.cssText = 'display:inline;font-size:12.5px;font-weight:500;color:#1c1c2e;background:none;border:none;padding:0;margin:0;';
+        }
+        span.textContent = text || '—';
+
+        // Replace el with span in-place
+        el.parentNode.insertBefore(span, el);
+        el.parentNode.removeChild(el);
+        swaps.push({ span, el, wasRemoved: true });
+      });
+
+      // Trigger print
+      window.print();
+
+      // Restore: swap spans back to original inputs/selects
+      // Use afterprint event for reliable restore on both desktop and mobile
+      let restored = false;
+      function restore() {
+        if (restored) return;
+        restored = true;
+        swaps.forEach(({ span, el }) => {
+          if (span.parentNode) {
+            span.parentNode.insertBefore(el, span);
+            span.parentNode.removeChild(span);
+          }
+        });
+        window.removeEventListener('afterprint', restore);
+      }
+
+      // afterprint fires on desktop after dialog closes; on mobile it fires immediately
+      // We also set a fallback timeout in case afterprint never fires (some mobile browsers)
+      window.addEventListener('afterprint', restore);
+      setTimeout(restore, 2000); // fallback: restore after 2s regardless
+    }
+
+    // ── Project Cost Summary ──
+    function sumSpans(selector) {
+      let total = 0;
+      document.querySelectorAll(selector).forEach(el => {
+        total += parseFloat(el.textContent) || 0;
+      });
+      return total;
+    }
+
+    function updateProjectSummary() {
+      const wood = sumSpans('.wood-work-total');
+      const fc = sumSpans('.fc-section-total');
+      const gw = sumSpans('.gw-section-total');
+      const cu = sumSpans('.cu-section-total');
+      const el = sumSpans('.el-section-total');
+      const ow = sumSpans('.ow-section-total');
+      const sub = wood + fc + gw + cu + el + ow;
+
+      document.getElementById('sum-wood').textContent = wood.toFixed(2);
+      document.getElementById('sum-fc').textContent = fc.toFixed(2);
+      document.getElementById('sum-gw').textContent = gw.toFixed(2);
+      document.getElementById('sum-cu').textContent = cu.toFixed(2);
+      document.getElementById('sum-el').textContent = el.toFixed(2);
+      document.getElementById('sum-ow').textContent = ow.toFixed(2);
+      document.getElementById('sum-subtotal').textContent = sub.toFixed(2);
+      document.getElementById('sum-grandtotal').textContent = sub.toFixed(2);
+    }
+
+    // Watch the entire tablesContainer for any text/DOM changes and update summary
+    const _summaryObserver = new MutationObserver(updateProjectSummary);
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('tablesContainer');
+      if (container) {
+        _summaryObserver.observe(container, { subtree: true, childList: true, characterData: true });
+      }
+      updateProjectSummary();
+    });
+
+    // ── Brand → Price rates ──
+    const BRAND_PRICES = {
+      gurgan: { boxPrice: 1350, framePrice: 750, panelingPrice: 600 },
+      sink710: { boxPrice: 1500, framePrice: 850, panelingPrice: 750 },
+      'kitchen(acrylic)': { boxPrice: 1650, framePrice: 950, panelingPrice: 800 },
+      'wpc(wincrop)': { boxPrice: 1500, framePrice: 850, panelingPrice: 750 },
+    };
+    function getPricesForBox(boxEl) {
+      const brand = boxEl.querySelector('.brand-select').value;
+      return BRAND_PRICES[brand] ?? { boxPrice: 0, framePrice: 0, panelingPrice: 0 };
+    }
+
+    // ── Helpers ──
+
+    // Update the option labels in a price-type select to show current brand prices
+    function updateSelectLabels(selectEl, prices) {
+      selectEl.querySelectorAll('option').forEach(opt => {
+        switch (opt.value) {
+          case 'boxPrice': opt.textContent = `Box—₹${prices.boxPrice}`; break;
+          case 'framePrice': opt.textContent = `Frame—₹${prices.framePrice}`; break;
+          case 'panelingPrice': opt.textContent = `Paneling—₹${prices.panelingPrice}`; break;
+          case 'lumsum': opt.textContent = 'Lump Sum'; break;
+          default: opt.textContent = '— Select —';
+        }
+      });
+    }
+
+    function recalcBox(boxEl) {
+      const prices = getPricesForBox(boxEl);
+      let boxTotal = 0;
+      boxEl.querySelectorAll('.box-tbody tr').forEach(row => {
+        // Refresh option labels for this row's select
+        updateSelectLabels(row.querySelector('.row-price-type'), prices);
+
+        const L = parseFloat(row.querySelector('.row-L').value) || 0;
+        const H = parseFloat(row.querySelector('.row-H').value) || 0;
+        const priceType = row.querySelector('.row-price-type').value;
+        const sqft = L * H;
+        const rate = prices[priceType] ?? 0;
+        const lumpVal = parseFloat(row.querySelector('.row-lump').value) || 0;
+        const total = priceType === 'lumsum' ? lumpVal : sqft * rate;
+        row.querySelector('.row-sqft').textContent = sqft.toFixed(2);
+        row.querySelector('.row-total').textContent = total.toFixed(2);
+        // Show/hide lump-sum input
+        row.querySelector('.lump-cell').style.display = priceType === 'lumsum' ? '' : 'none';
+        row.querySelector('.row-price-type').style.display = priceType === 'lumsum' ? 'none' : '';
+        boxTotal += total;
+      });
+      boxEl.querySelector('.room-total').textContent = boxTotal.toFixed(2);
+    }
+
+    function addRowToBox(boxEl) {
+      const tmpl = document.getElementById('woodWorkRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcBox(boxEl));
+      });
+      row.querySelector('.remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcBox(boxEl);
+      });
+      boxEl.querySelector('.box-tbody').appendChild(row);
+      // Set labels right away for the current brand
+      updateSelectLabels(row.querySelector('.row-price-type'), getPricesForBox(boxEl));
+      recalcBox(boxEl);
+    }
+
+    function addWoodWorkBox(container) {
+      const tmpl = document.getElementById('woodWorkBoxTemplate');
+      const box = tmpl.content.cloneNode(true).querySelector('.wood-box');
+
+      // Brand change → recalc all rows in this box immediately
+      box.querySelector('.brand-select').addEventListener('change', () => recalcBox(box));
+
+      const rowTmpl = document.getElementById('woodWorkRowTemplate');
+      const firstRow = rowTmpl.content.cloneNode(true).querySelector('tr');
+      firstRow.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcBox(box));
+      });
+      firstRow.querySelector('.remove-row-btn').addEventListener('click', () => {
+        firstRow.remove(); recalcBox(box);
+      });
+      box.querySelector('.box-tbody').appendChild(firstRow);
+
+      box.querySelector('.add-row-btn').addEventListener('click', () => addRowToBox(box));
+      box.querySelector('.remove-box-btn').addEventListener('click', () => {
+        if (confirm('Remove this box?')) box.remove();
+      });
+      container.appendChild(box);
+    }
+
+    // ── Wood Work Section ──
+    function createWoodWorkSection() {
+      const section = document.createElement('div');
+      section.className = 'wood-work-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> Wood Work Details</h5>
+          <div class="d-flex gap-2">
+            <button class="btn btn-danger btn-sm remove-table-btn actions">✕ Remove Table</button>
+            <button class="btn btn-primary btn-sm add-box-btn actions">+ Add Box</button>
+          </div>
+        </div>
+        <div class="boxes-container"></div>
+        <hr>
+        <div class="text-end fw-bold fs-5 pe-2 mb-2" style="color:var(--green);">
+          Wood Work Total: ₹<span class="wood-work-total">0.00</span>
+        </div>
+      `;
+
+      const boxesContainer = section.querySelector('.boxes-container');
+
+      // Update Wood Work Total whenever any room total changes
+      const updateWoodWorkTotal = () => {
+        let total = 0;
+        section.querySelectorAll('.room-total').forEach(el => {
+          total += parseFloat(el.textContent) || 0;
+        });
+        section.querySelector('.wood-work-total').textContent = total.toFixed(2);
+      };
+
+      // Observe DOM mutations to keep total in sync
+      const observer = new MutationObserver(updateWoodWorkTotal);
+      observer.observe(boxesContainer, { subtree: true, characterData: true, childList: true });
+
+      // Remove Table button — removes the entire section
+      section.querySelector('.remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this Wood Work table?')) {
+          observer.disconnect();
+          section.remove();
+        }
+      });
+
+      // Add Box button
+      section.querySelector('.add-box-btn').addEventListener('click', () => {
+        addWoodWorkBox(boxesContainer);
+      });
+
+      // Add first box by default
+      addWoodWorkBox(boxesContainer);
+
+      return section;
+    }
+
+    // ── False Ceiling price rates ──
+    const FC_PRICES = {
+      saintgobain_jsw: 60,
+      oman_jsw: 55,
+      pvc: 90,
+      fluted: 140,
+      saintgobain_megasteel: 110,
+      rft: 200,
+      lumsum: 0,
+    };
+
+    function recalcFCBox(boxEl) {
+      let boxTotal = 0;
+      boxEl.querySelectorAll('.fc-tbody tr').forEach(row => {
+        const priceType = row.querySelector('.fc-row-price-type').value;
+        const isRFT = priceType === 'rft';
+        const isLump = priceType === 'lumsum';
+        const hInput = row.querySelector('.fc-row-H');
+        const LInput = row.querySelector('.fc-row-L');
+
+        // RFT → disable & grey out H, clear its value
+        hInput.disabled = isRFT;
+        hInput.style.background = isRFT ? '#e9ecef' : '';
+        hInput.style.color = isRFT ? '#adb5bd' : '';
+        hInput.title = isRFT ? 'Not used for RFT (running feet)' : '';
+        if (isRFT) hInput.value = '';
+
+        // lumsum → disable & grey out H,l clear its value
+        LInput.disabled = isLump;
+        LInput.style.background = isLump ? '#e9ecef' : '';
+        LInput.style.color = isLump ? '#adb5bd' : '';
+        LInput.title = isLump ? 'Not used for RFT (running feet)' : '';
+        if (isLump) LInput.value = '';
+
+        hInput.disabled = isLump;
+        hInput.style.background = isLump ? '#e9ecef' : '';
+        hInput.style.color = isLump ? '#adb5bd' : '';
+        hInput.title = isLump ? 'Not used for RFT (running feet)' : '';
+        if (isLump) hInput.value = '';
+
+
+        const L = parseFloat(row.querySelector('.fc-row-L').value) || 0;
+        const H = isRFT ? 1 : (parseFloat(hInput.value) || 0);
+        const sqft = isRFT ? L : L * H;           // RFT: just L (running feet)
+        const rate = FC_PRICES[priceType] ?? 0;
+        const lumpVal = parseFloat(row.querySelector('.fc-row-lump').value) || 0;
+        const total = isLump ? lumpVal : sqft * rate;
+
+        row.querySelector('.fc-row-sqft').textContent = sqft.toFixed(2);
+        row.querySelector('.fc-row-total').textContent = total.toFixed(2);
+        row.querySelector('.fc-row-lump').style.display = isLump ? '' : 'none';
+        row.querySelector('.fc-row-price-type').style.display = isLump ? 'none' : '';
+        boxTotal += total;
+      });
+      boxEl.querySelector('.fc-room-total').textContent = boxTotal.toFixed(2);
+    }
+
+    function addRowToFCBox(boxEl) {
+      const tmpl = document.getElementById('falseCeilingRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcFCBox(boxEl));
+      });
+      row.querySelector('.fc-remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcFCBox(boxEl);
+      });
+      boxEl.querySelector('.fc-tbody').appendChild(row);
+      recalcFCBox(boxEl);
+    }
+
+    function addFCBox(container) {
+      const tmpl = document.getElementById('falseCeilingBoxTemplate');
+      const box = tmpl.content.cloneNode(true).querySelector('.fc-box');
+
+      const firstRow = document.getElementById('falseCeilingRowTemplate').content.cloneNode(true).querySelector('tr');
+      firstRow.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcFCBox(box));
+      });
+      firstRow.querySelector('.fc-remove-row-btn').addEventListener('click', () => {
+        firstRow.remove(); recalcFCBox(box);
+      });
+      box.querySelector('.fc-tbody').appendChild(firstRow);
+
+      box.querySelector('.fc-add-row-btn').addEventListener('click', () => addRowToFCBox(box));
+      box.querySelector('.fc-remove-box-btn').addEventListener('click', () => {
+        if (confirm('Remove this box?')) box.remove();
+      });
+      container.appendChild(box);
+    }
+
+    function createFalseCeilingSection() {
+      const section = document.createElement('div');
+      section.className = 'fc-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> False Ceiling Work</h5>
+          <div class="d-flex gap-2">
+            <button class="btn btn-danger btn-sm fc-remove-table-btn actions">✕ Remove Table</button>
+            <button class="btn btn-primary btn-sm fc-add-box-btn actions">+ Add Box</button>
+          </div>
+        </div>
+        <div class="fc-boxes-container"></div>
+        <hr>
+        <div class="text-end fw-bold fs-5 pe-2 mb-2" style="color:var(--green);">
+          False Ceiling Total: ₹<span class="fc-section-total">0.00</span>
+        </div>
+      `;
+
+      const boxesContainer = section.querySelector('.fc-boxes-container');
+
+      const updateFCTotal = () => {
+        let total = 0;
+        section.querySelectorAll('.fc-room-total').forEach(el => {
+          total += parseFloat(el.textContent) || 0;
+        });
+        section.querySelector('.fc-section-total').textContent = total.toFixed(2);
+      };
+
+      const observer = new MutationObserver(updateFCTotal);
+      observer.observe(boxesContainer, { subtree: true, characterData: true, childList: true });
+
+      section.querySelector('.fc-remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this False Ceiling table?')) {
+          observer.disconnect();
+          section.remove();
+        }
+      });
+
+      section.querySelector('.fc-add-box-btn').addEventListener('click', () => addFCBox(boxesContainer));
+
+      // First box by default
+      addFCBox(boxesContainer);
+
+      return section;
+    }
+
+
+
+    // ── Glass Work price rates ──
+    const GW_PRICES = {
+      bathroom_glass: 600,
+      mirror_light: 650,
+      normal_mirror: 250,
+      lumsum: 0,
+    };
+
+    function recalcGW(section) {
+      let total = 0;
+      section.querySelectorAll('.gw-tbody tr').forEach(row => {
+        const priceType = row.querySelector('.gw-row-price-type').value;
+        const isLump = priceType === 'lumsum';
+        const LInput = row.querySelector('.gw-row-L');
+        const HInput = row.querySelector('.gw-row-H');
+
+        LInput.disabled = isLump;
+        LInput.style.background = isLump ? '#e9ecef' : '';
+        HInput.disabled = isLump;
+        HInput.style.background = isLump ? '#e9ecef' : '';
+        if (isLump) { LInput.value = ''; HInput.value = ''; }
+
+        const L = parseFloat(LInput.value) || 0;
+        const H = parseFloat(HInput.value) || 0;
+        const sqft = L * H;
+        const rate = GW_PRICES[priceType] ?? 0;
+        const lumpVal = parseFloat(row.querySelector('.gw-row-lump').value) || 0;
+        const rowTotal = isLump ? lumpVal : sqft * rate;
+
+        row.querySelector('.gw-row-sqft').textContent = sqft.toFixed(2);
+        row.querySelector('.gw-row-total').textContent = rowTotal.toFixed(2);
+        row.querySelector('.gw-row-lump').style.display = isLump ? '' : 'none';
+        row.querySelector('.gw-row-price-type').style.display = isLump ? 'none' : '';
+        total += rowTotal;
+      });
+      section.querySelector('.gw-section-total').textContent = total.toFixed(2);
+    }
+
+    function addRowToGW(section) {
+      const tmpl = document.getElementById('glassWorkRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcGW(section));
+      });
+      row.querySelector('.gw-remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcGW(section);
+      });
+      section.querySelector('.gw-tbody').appendChild(row);
+      recalcGW(section);
+    }
+
+    function createGlassWorkSection() {
+      const section = document.createElement('div');
+      section.className = 'gw-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> Glass Work Details</h5>
+          <button class="btn btn-danger btn-sm gw-remove-table-btn actions">✕ Remove Table</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-striped mb-1" style="--bs-table-bg:#f0f4ff;">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:60px;">L</th>
+                <th scope="col" style="width:60px;">H</th>
+                <th scope="col" style="width:70px;">Sqft</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:90px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="gw-tbody"></tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1 mb-2">
+          <button class="btn btn-primary btn-sm gw-add-row-btn actions">+ Add Row</button>
+        </div>
+        <hr>
+        <div class=" text-end fw-bold fs-5" style="color:var(--green);">  
+          Glass Work Total: ₹<span class="gw-section-total">0.00</span></div>
+      `;
+
+      section.querySelector('.gw-remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this Glass Work table?')) section.remove();
+      });
+
+      section.querySelector('.gw-add-row-btn').addEventListener('click', () => addRowToGW(section));
+
+      // Add first row by default
+      addRowToGW(section);
+
+      return section;
+    }
+
+    // ── Cushioning price rates ──
+    const CU_PRICES = {
+      head_board_cushion: 1050,
+      lumsum: 0,
+    };
+
+    function recalcCU(section) {
+      let total = 0;
+      section.querySelectorAll('.cu-tbody tr').forEach(row => {
+        const priceType = row.querySelector('.cu-row-price-type').value;
+        const isLump = priceType === 'lumsum';
+        const LInput = row.querySelector('.cu-row-L');
+        const HInput = row.querySelector('.cu-row-H');
+
+        LInput.disabled = isLump;
+        LInput.style.background = isLump ? '#e9ecef' : '';
+        HInput.disabled = isLump;
+        HInput.style.background = isLump ? '#e9ecef' : '';
+        if (isLump) { LInput.value = ''; HInput.value = ''; }
+
+        const L = parseFloat(LInput.value) || 0;
+        const H = parseFloat(HInput.value) || 0;
+        const sqft = L * H;
+        const rate = CU_PRICES[priceType] ?? 0;
+        const lumpVal = parseFloat(row.querySelector('.cu-row-lump').value) || 0;
+        const rowTotal = isLump ? lumpVal : sqft * rate;
+
+        row.querySelector('.cu-row-sqft').textContent = sqft.toFixed(2);
+        row.querySelector('.cu-row-total').textContent = rowTotal.toFixed(2);
+        row.querySelector('.cu-row-lump').style.display = isLump ? '' : 'none';
+        row.querySelector('.cu-row-price-type').style.display = isLump ? 'none' : '';
+        total += rowTotal;
+      });
+      section.querySelector('.cu-section-total').textContent = total.toFixed(2);
+    }
+
+    function addRowToCU(section) {
+      const tmpl = document.getElementById('cushioningRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcCU(section));
+      });
+      row.querySelector('.cu-remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcCU(section);
+      });
+      section.querySelector('.cu-tbody').appendChild(row);
+      recalcCU(section);
+    }
+
+    function createCushioningSection() {
+      const section = document.createElement('div');
+      section.className = 'cu-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> Cushioning Work Details</h5>
+          <button class="btn btn-danger btn-sm cu-remove-table-btn actions">✕ Remove Table</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-striped mb-1" style="--bs-table-bg:#fff8f0;">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:60px;">L</th>
+                <th scope="col" style="width:60px;">H</th>
+                <th scope="col" style="width:70px;">Sqft</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:90px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="cu-tbody"></tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1 mb-2">
+          <button class="btn btn-primary btn-sm cu-add-row-btn actions">+ Add Row</button>
+        </div>
+        <hr>
+        <div class=" text-end fw-bold fs-5" style="color:var(--green);">
+          Cushioning Total: ₹<span class="cu-section-total">0.00</span></div>
+      `;
+
+      section.querySelector('.cu-remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this Cushioning table?')) section.remove();
+      });
+
+      section.querySelector('.cu-add-row-btn').addEventListener('click', () => addRowToCU(section));
+
+      addRowToCU(section);
+      return section;
+    }
+
+    // ── Electrical price rates & unit types ──
+    // unit: 'm' = input is in feet, convert to meters; 'pt' = input is points (count)
+    const EL_CONFIG = {
+      roof_light: { rate: 800, unit: 'm' },
+      profile_light: { rate: 750, unit: 'm' },
+      panel_light: { rate: 1500, unit: 'pt' },
+      tube_light: { rate: 800, unit: 'pt' },
+      ceiling_fan: { rate: 6000, unit: 'pt' },
+      spot_light: { rate: 550, unit: 'pt' },
+      lumsum: { rate: 0, unit: null },
+    };
+
+    function recalcEL(section) {
+      let total = 0;
+      section.querySelectorAll('.el-tbody tr').forEach(row => {
+        const priceType = row.querySelector('.el-row-price-type').value;
+        const isLump = priceType === 'lumsum';
+        const inputEl = row.querySelector('.el-row-input');
+        const convertedEl = row.querySelector('.el-row-converted');
+        const lumpEl = row.querySelector('.el-row-lump');
+        const totalEl = row.querySelector('.el-row-total');
+
+        // Show/hide lump input
+        lumpEl.style.display = isLump ? '' : 'none';
+        inputEl.style.display = isLump ? 'none' : '';
+        row.querySelector('.el-row-price-type').style.display = isLump ? 'none' : '';
+
+        if (isLump) {
+          convertedEl.textContent = '—';
+          const lumpVal = parseFloat(lumpEl.value) || 0;
+          totalEl.textContent = lumpVal.toFixed(2);
+          total += lumpVal;
+          return;
+        }
+
+        const cfg = EL_CONFIG[priceType];
+        const rawVal = parseFloat(inputEl.value) || 0;
+
+        if (!cfg || !priceType) {
+          convertedEl.textContent = '—';
+          totalEl.textContent = '0.00';
+          return;
+        }
+
+        let converted, rowTotal;
+        if (cfg.unit === 'm') {
+          // input is in feet → convert to meters
+          converted = rawVal * 0.3048;
+          convertedEl.textContent = converted.toFixed(3) + ' m';
+          rowTotal = converted * cfg.rate;
+        } else {
+          // input is points (count)
+          converted = rawVal;
+          convertedEl.textContent = rawVal + ' pts';
+          rowTotal = rawVal * cfg.rate;
+        }
+
+        totalEl.textContent = rowTotal.toFixed(2);
+        total += rowTotal;
+      });
+      section.querySelector('.el-section-total').textContent = total.toFixed(2);
+    }
+
+    function addRowToEL(section) {
+      const tmpl = document.getElementById('electricalRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcEL(section));
+      });
+      row.querySelector('.el-remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcEL(section);
+      });
+      section.querySelector('.el-tbody').appendChild(row);
+      recalcEL(section);
+    }
+
+    function createElectricalSection() {
+      const section = document.createElement('div');
+      section.className = 'el-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> Electrical Work Details</h5>
+          <button class="btn btn-danger btn-sm el-remove-table-btn actions">✕ Remove Table</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-striped mb-1" style="--bs-table-bg:#fffff0;">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:80px;">Ft / Pts</th>
+                <th scope="col" style="width:100px;">Meters / Pts</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:90px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="el-tbody"></tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1 mb-2">
+          <button class="btn btn-primary btn-sm el-add-row-btn actions">+ Add Row</button>
+        </div>
+        <hr>
+        <div class=" text-end fw-bold fs-5" style="color:var(--green);">
+          Electrical Total: ₹<span class="el-section-total">0.00</span></div>
+      `;
+
+      section.querySelector('.el-remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this Electrical table?')) section.remove();
+      });
+      section.querySelector('.el-add-row-btn').addEventListener('click', () => addRowToEL(section));
+
+      addRowToEL(section);
+      return section;
+    }
+
+    // ── Other Work ──
+    function recalcOW(section) {
+      let total = 0;
+      section.querySelectorAll('.ow-tbody tr').forEach(row => {
+        const selectEl = row.querySelector('.ow-row-price-type');
+        const priceType = selectEl.value;
+        const isLump = priceType === 'lumsum';
+        const isPxQ = priceType === 'price_x_qty';
+        const qtyEl = row.querySelector('.ow-row-qty');
+        const priceEl = row.querySelector('.ow-row-price');
+        const lumpEl = row.querySelector('.ow-row-lump');
+        const totalEl = row.querySelector('.ow-row-total');
+
+
+        // Show/hide inputs
+        priceEl.style.display = isPxQ ? '' : 'none';
+        lumpEl.style.display = isLump ? '' : 'none';
+        console.log(isLump);
+        console.log(isPxQ);
+
+        if (priceType) {
+          selectEl.style.display = 'none';
+        } else {
+          selectEl.style.display = '';
+        }
+
+
+        // Disable qty for lump sum
+        qtyEl.disabled = isLump;
+        qtyEl.style.background = isLump ? '#e9ecef' : '';
+        if (isLump) qtyEl.value = '';
+
+        let rowTotal = 0;
+        if (isPxQ) {
+          const qty = parseFloat(qtyEl.value) || 0;
+          const price = parseFloat(priceEl.value) || 0;
+          rowTotal = qty * price;
+        } else if (isLump) {
+          rowTotal = parseFloat(lumpEl.value) || 0;
+        }
+
+        totalEl.textContent = rowTotal.toFixed(2);
+        total += rowTotal;
+      });
+      section.querySelector('.ow-section-total').textContent = total.toFixed(2);
+    }
+
+    function addRowToOW(section) {
+      const tmpl = document.getElementById('otherWorkRowTemplate');
+      const row = tmpl.content.cloneNode(true).querySelector('tr');
+      row.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', () => recalcOW(section));
+      });
+      row.querySelector('.ow-remove-row-btn').addEventListener('click', () => {
+        row.remove(); recalcOW(section);
+      });
+      section.querySelector('.ow-tbody').appendChild(row);
+      recalcOW(section);
+    }
+
+    function createOtherWorkSection() {
+      const section = document.createElement('div');
+      section.className = 'ow-section px-4 py-3';
+      section.innerHTML = `
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold" style="color:var(--navy);"> Other Work Details</h5>
+          <button class="btn btn-danger btn-sm ow-remove-table-btn actions">✕ Remove Table</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered fw-bold table-striped mb-1" style="--bs-table-bg:#f0fff4;">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Item</th>
+                <th scope="col" style="width:70px;">Qty</th>
+                <th scope="col">Price</th>
+                <th scope="col" style="width:100px;">Total</th>
+                <th class="actions" scope="col" style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody class="ow-tbody"></tbody>
+          </table>
+        </div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-1 mb-2">
+          <button class="btn btn-primary btn-sm ow-add-row-btn actions">+ Add Row</button>
+        </div>
+        <hr>
+        <div class="text-end fw-bold fs-5" style="color:var(--green);">
+          Other Work Total: ₹<span class="ow-section-total">0.00</span></div>
+      `;
+
+      section.querySelector('.ow-remove-table-btn').addEventListener('click', () => {
+        if (confirm('Remove this Other Work table?')) section.remove();
+      });
+      section.querySelector('.ow-add-row-btn').addEventListener('click', () => addRowToOW(section));
+
+      addRowToOW(section);
+      return section;
+    }
+
+
+    // ── Add Table Button ──
+    document.getElementById('addTableBtn').addEventListener('click', () => {
+      console.log('button clicked');
+      const selected = document.getElementById('tableSelect').value;
+      const container = document.getElementById('tablesContainer');
+      console.log(selected);
+      if (selected === 'Wood Work') {
+        container.appendChild(createWoodWorkSection());
+        console.log('Creating section');
+      } else if (selected === 'False Ceiling') {
+        container.appendChild(createFalseCeilingSection());
+        console.log('Creating section');
+      } else if (selected === 'Glass Work') {
+        container.appendChild(createGlassWorkSection());
+        console.log('Creating Glass Work section');
+      } else if (selected === 'Cushioning') {
+        container.appendChild(createCushioningSection());
+      } else if (selected === 'Electrical Works') {
+        container.appendChild(createElectricalSection());
+      } else if (selected === 'Other Works') {
+        container.appendChild(createOtherWorkSection());
+      } else {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'px-4 py-3 mb-2';
+        placeholder.innerHTML = `<div class="alert alert-info mb-0">📋 <strong>${selected}</strong> table coming soon.</div>`;
+        container.appendChild(placeholder);
+      }
+    });
+
+    // ── Save / Load / Clear ──
+    function saveData() {
+      const data = {
+        date: document.getElementById('est-date').value,
+        from: document.getElementById('est-from').value,
+        contact: document.getElementById('est-contact').value,
+        clName: document.getElementById('cl-name').value,
+        clPhone: document.getElementById('cl-phone').value,
+        clAddr: document.getElementById('cl-addr').value,
+      };
+      localStorage.setItem('Exodus_associates', JSON.stringify(data));
+      alert('Saved successfully!');
+    }
+
+    function loadData() {
+      try {
+        const data = JSON.parse(localStorage.getItem('Exodus_associates'));
+        if (!data) return;
+        document.getElementById('est-date').value = data.date || '';
+        document.getElementById('est-from').value = data.from || '';
+        document.getElementById('est-contact').value = data.contact || '';
+        document.getElementById('cl-name').value = data.clName || '';
+        document.getElementById('cl-phone').value = data.clPhone || '';
+        document.getElementById('cl-addr').value = data.clAddr || '';
+      } catch (e) { }
+    }
+
+    function clearAll() {
+      if (!confirm('Clear all data?')) return;
+      ['est-date', 'est-from', 'est-contact', 'cl-name', 'cl-phone', 'cl-addr'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('tablesContainer').innerHTML = '';
+      localStorage.removeItem('Exodus_associates');
+    }
+
+    // ── Materials Specifications ──
+    const DEFAULT_MAT_ROWS = [
+      // From image 2 (Wood Work / General materials)
+      { material: 'Plywood', spec: 'Sainik 710 or Greenply EcoTec', benefits: 'Strong durability, termite resistance and long life performance', checked: true },
+      { material: 'Laminates', spec: '1mm Virgo or Century Laminates', benefits: 'Premium finish, scratch resistance and elegant appearance', checked: true },
+      { material: 'Kitchen Acrylic', spec: '1.08mm Acrylic Finish', benefits: 'High gloss luxury finish with smooth maintenance', checked: true },
+      { material: 'Adhesive', spec: 'Fevicol Marine', benefits: 'Better bonding strength and moisture resistance', checked: true },
+      { material: 'Inner Laminates', spec: 'Virgo Laminates', benefits: 'Protects plywood internally and gives clean finish', checked: true },
+      { material: 'PVC Back Sheet', spec: 'Moisture Protection Layer', benefits: 'Prevents direct moisture contact between wall and plywood', checked: true },
+      { material: 'Double Side Lamination', spec: 'Inner laminate on both sides', benefits: 'Reduces moisture absorption and improves plywood life', checked: true },
+      { material: 'Hardware', spec: 'Nimmi Soft Close', benefits: 'Smooth operation and premium functionality', checked: true },
+      { material: 'Tandem Baskets', spec: 'Nimmi', benefits: 'Better storage management and smooth access', checked: true },
+      { material: 'Sliding Channels', spec: 'Nimmi Soft Close', benefits: 'Silent and smooth drawer movement', checked: true },
+      { material: 'Screws', spec: 'Nimmi & PTA', benefits: 'Strong fitting support and durability', checked: true },
+      { material: 'Glass Partitions', spec: 'Saint-Gobain Toughened Glass with Safety Film', benefits: 'Safety, strength and premium bathroom appearance', checked: true },
+      // From image 1 (Ceiling / Electrical / Finishing)
+      { material: 'False Ceiling Board', spec: 'Saint-Gobain 12.5mm', benefits: 'Crack resistance and long-lasting finish', checked: true },
+      { material: 'Ceiling Channels', spec: 'Gyproc Mega Steel 5070 Gauge', benefits: 'Strong ceiling support and durability', checked: true },
+      { material: 'Electrical Wiring', spec: 'Finolex Wire', benefits: 'Safe electrical performance and long-term reliability', checked: true },
+      { material: 'Panel Lights', spec: 'Crompton / Havells / Wipro – 15W', benefits: 'Energy saving with premium lighting output', checked: true },
+      { material: 'Switches', spec: 'Anchor Penta', benefits: 'Reliable electrical performance', checked: true },
+      { material: 'Fans', spec: 'Atomberg', benefits: 'Energy efficient and silent performance', checked: true },
+      { material: 'Chimney', spec: 'Elica', benefits: 'Premium kitchen ventilation and performance', checked: true },
+      { material: 'Putty & Paint', spec: 'Asian Paints Interior Putty + Tractor Emulsion', benefits: 'Smooth ceiling finish and elegant appearance', checked: true },
+      { material: 'Factory Finish Process', spec: 'Cutting, Pasting, Edge Binding & Cold Press', benefits: 'Better finishing quality and accurate workmanship', checked: true },
+      { material: 'Rough Work', spec: 'Site Finishing Process', benefits: 'Proper adjustment and neat final installation at site', checked: true },
+    ];
+
+    function createMatRow(data = { material: '', spec: '', benefits: '', checked: true }) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><input type="text" class="form-control form-control-sm mat-material" value="${data.material}" placeholder="Material"></td>
+        <td><input type="text" class="form-control form-control-sm mat-spec" value="${data.spec}" placeholder="Specification"></td>
+        <td><input type="text" class="form-control form-control-sm mat-benefits" value="${data.benefits}" placeholder="Benefits"></td>
+        <td class="text-center align-middle actions">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <input type="checkbox" class="form-check-input mat-include" title="Include in PDF" style="width:18px;height:18px;cursor:pointer;" ${data.checked ? 'checked' : ''}>
+          </div>
+        </td>
+      `;
+      // Dim row visually when unchecked
+      const cb = tr.querySelector('.mat-include');
+      const applyDim = () => { tr.style.opacity = cb.checked ? '1' : '0.4'; };
+      cb.addEventListener('change', applyDim);
+      applyDim();
+      return tr;
+    }
+
+    function addMatRow(data) {
+      const tbody = document.getElementById('matSpecBody');
+      tbody.appendChild(createMatRow(data));
+    }
+
+    function initMatSpec() {
+      DEFAULT_MAT_ROWS.forEach(row => addMatRow(row));
+    }
+
+    // Hook into smartPrint to only show checked rows
+    function smartPrint() {
+      // Temporarily hide unchecked mat rows
+      const hidden = [];
+      document.querySelectorAll('#matSpecBody tr').forEach(tr => {
+        const cb = tr.querySelector('.mat-include');
+        if (cb && !cb.checked) {
+          tr.style.display = 'none';
+          hidden.push(tr);
+        }
+      });
+
+      // Restore hidden rows after print (mirrors the afterprint timing in _basePrint)
+      function restoreMat() {
+        hidden.forEach(tr => { tr.style.display = ''; });
+        window.removeEventListener('afterprint', restoreMat);
+      }
+      window.addEventListener('afterprint', restoreMat);
+      setTimeout(restoreMat, 2000); // fallback for mobile
+
+      _basePrint();
+    }
+
+    initMatSpec();
+
+    // Set today's date as default
+    document.getElementById('est-date').valueAsDate = new Date();
+
+    // Load saved data if exists
+    if (localStorage.getItem('Exodus_associates')) loadData();
+  </script>
+</body>
+
+</html>
